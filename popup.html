@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenDirFinder</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+  <div class="container">
+    <div class="header-container">
+      <h1>OpenDirFinder</h1>
+      <div class="theme-toggle">
+        <input type="checkbox" id="themeToggle" class="theme-toggle-input">
+        <label for="themeToggle" class="theme-toggle-label">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
+    </div>
+    
+    <div class="search-section">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Enter search term...">
+      </div>
+      
+      <div class="file-type-selector">
+        <h2>Select File Type:</h2>
+        <div class="type-buttons">
+          <button id="movieBtn" class="type-btn">
+            <i class="fas fa-film"></i> Movies
+          </button>
+          <button id="gameBtn" class="type-btn">
+            <i class="fas fa-gamepad"></i> Games
+          </button>
+          <button id="musicBtn" class="type-btn">
+            <i class="fas fa-music"></i> Music
+          </button>
+          <button id="documentBtn" class="type-btn">
+            <i class="fas fa-file-alt"></i> Documents
+          </button>
+        </div>
+        
+        <div class="custom-extensions">
+          <details>
+            <summary><i class="fas fa-cog"></i> Customize Extensions</summary>
+            <div class="extensions-input">
+              <input type="text" id="customExtensions" placeholder="Custom extensions (e.g., mp4|avi|mkv)">
+              <div class="extensions-help">
+                <i class="fas fa-info-circle"></i> Use pipe (|) to separate extensions without spaces
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+      
+      <div class="search-options">
+        <details>
+          <summary><i class="fas fa-sliders-h"></i> Advanced Options</summary>
+          <div class="advanced-options">
+            <div class="option">
+              <input type="radio" id="basicSearch" name="searchType" value="basic" checked>
+              <label for="basicSearch">Basic Search</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="recentlyAdded" name="searchType" value="recent">
+              <label for="recentlyAdded">Recently Added</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="parentDirectory" name="searchType" value="parent">
+              <label for="parentDirectory">Parent Directory</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="ftpServer" name="searchType" value="ftp">
+              <label for="ftpServer">FTP Server</label>
+            </div>
+            <div class="option checkbox-option">
+              <input type="checkbox" id="enableDirectDownload" name="enableDirectDownload">
+              <label for="enableDirectDownload">Enable Direct Download Links</label>
+            </div>
+          </div>
+        </details>
+      </div>
+      
+      <button id="searchBtn" class="search-button">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+    
+    <div class="results-section" id="resultsSection">
+      <h2><i class="fas fa-list"></i> Results</h2>
+      <div id="resultsList"></div>
+    </div>
+    
+    <div id="downloadSection" class="download-section" style="display: none;">
+      <h2><i class="fas fa-download"></i> Direct Download Links</h2>
+      <div class="loader" id="downloadLoader">
+        <i class="fas fa-spinner fa-spin"></i> Loading links...
+      </div>
+      <div id="downloadList"></div>
+    </div>
+    
+    <div class="footer">
+      <button id="helpBtn">
+        <i class="fas fa-question-circle"></i> How to Use
+      </button>
+    </div>
+  </div>
+  
+  <script src="advanced.js"></script>
+  <script src="directDownload.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 

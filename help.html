@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenDirFinder - Help</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    
+    .section {
+      margin-bottom: 40px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    }
+    
+    .dork-example {
+      background-color: #e8f4fc;
+      padding: 10px;
+      border-left: 4px solid #3498db;
+      margin: 10px 0;
+      font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    }
+    
+    .warning {
+      background-color: #ffeaa7;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #fdcb6e;
+    }
+  </style>
+</head>
+<body>
+  <h1>OpenDirFinder - Help & Information</h1>
+  
+  <div class="section">
+    <h2>What is OpenDirFinder?</h2>
+    <p>OpenDirFinder is a Chrome extension that helps you search for files in open directories using specialized Google search queries known as "Google dorks". By creating precisely formatted search queries, the extension can help you find publicly accessible files across the web.</p>
+  </div>
+  
+  <div class="section">
+    <h2>How to Use</h2>
+    <ol>
+      <li>Enter the name of what you're looking for in the search box (e.g., movie name, game title, artist name, etc.)</li>
+      <li>Select the appropriate file type category (Movies, Games, Music, or Documents)</li>
+      <li>Optionally customize file extensions if you're looking for specific file types</li>
+      <li>Optionally select an advanced search option</li>
+      <li>Optionally enable direct download links if you want guidance on downloading found files</li>
+      <li>Click the Search button</li>
+      <li>A new tab will open with Google search results showing open directories that may contain your requested file</li>
+    </ol>
+  </div>
+  
+  <div class="section">
+    <h2>File Type Categories</h2>
+    
+    <h3>Movies</h3>
+    <p>Searches for video files with extensions: mp4, mkv, avi, mov, webm, flv</p>
+    <div class="dork-example">intitle:"index of" "movie name" (mp4|mkv|avi|mov|webm|flv)</div>
+    
+    <h3>Games</h3>
+    <p>Searches for game files with extensions: iso, zip, rar, 7z, exe, msi, dmg, torrent</p>
+    <div class="dork-example">intitle:"index of" "game name" (iso|zip|rar|7z|exe|msi|dmg|torrent)</div>
+    
+    <h3>Music</h3>
+    <p>Searches for audio files with extensions: mp3, flac, wav, ogg, m4a, aac</p>
+    <div class="dork-example">intitle:"index of" "artist/song name" (mp3|flac|wav|ogg|m4a|aac)</div>
+    
+    <h3>Documents</h3>
+    <p>Searches for document files with extensions: pdf, doc, docx, ppt, pptx, xls, xlsx, txt, epub, mobi</p>
+    <div class="dork-example">intitle:"index of" "document name" (pdf|doc|docx|ppt|pptx|xls|xlsx|txt|epub|mobi)</div>
+  </div>
+  
+  <div class="section">
+    <h2>Customizing File Extensions</h2>
+    <p>If you're looking for specific file types, you can customize the extensions used in the search:</p>
+    <ol>
+      <li>Click "Customize Extensions" to expand the options</li>
+      <li>When you select a file type category (Movies, Games, etc.), the extension will automatically fill in the relevant extensions</li>
+      <li>You can modify these pre-filled extensions as needed for your specific search</li>
+      <li>Enter your custom extensions in the format: <code>ext1|ext2|ext3</code> (no spaces)</li>
+      <li>For example, if you only want high-quality movie files, you might modify the default to: <code>mkv|bluray|2160p</code></li>
+    </ol>
+    <p>This is especially useful when:</p>
+    <ul>
+      <li>You need specific file formats (e.g., only PDF documents)</li>
+      <li>You're looking for less common file types</li>
+      <li>You want to search for files with specific quality indicators in the filename</li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>Direct Download Links</h2>
+    <p>Enabling the "Direct Download Links" option provides guidance for downloading files from open directories:</p>
+    <ul>
+      <li>When enabled, a new section will appear with tips for identifying and downloading files</li>
+      <li>Due to browser security restrictions, the extension cannot directly download files from search results</li>
+      <li>The extension provides step-by-step instructions to help you navigate to and download files</li>
+      <li>For security reasons, always verify the source before downloading any files</li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>Advanced Search Options</h2>
+    
+    <h3>Basic Search</h3>
+    <p>The default search type that looks for open directories containing your search term with the selected file extensions.</p>
+    <div class="dork-example">intitle:"index of" "search term" (file|extensions)</div>
+    
+    <h3>Recently Added</h3>
+    <p>Searches for files that have been recently added or modified in open directories.</p>
+    <div class="dork-example">intitle:"index of" "last modified" "search term" (file|extensions)</div>
+    
+    <h3>Parent Directory</h3>
+    <p>Looks for parent directories that might contain your files, often yielding better organized collections.</p>
+    <div class="dork-example">"parent directory" "(type)" "search term" -html -htm -php -asp -jsp</div>
+    
+    <h3>FTP Server</h3>
+    <p>Specifically searches for FTP servers that might host your desired files.</p>
+    <div class="dork-example">intitle:"index of" inurl:ftp "search term" (file|extensions)</div>
+  </div>
+  
+  <div class="section">
+    <h2>Advanced Tips</h2>
+    <ul>
+      <li>For more accurate results, use specific search terms</li>
+      <li>Try different variations of names if you don't find what you're looking for</li>
+      <li>For movies, include the release year (e.g., "Inception 2010")</li>
+      <li>For music, try both artist name and song title separately</li>
+      <li>Try different advanced search options for the same search term to find more results</li>
+      <li>If searching for older content, the "Recently Added" option might not be helpful</li>
+      <li>The "Parent Directory" option is especially useful for finding organized collections</li>
+      <li>When using custom extensions, stick to 3-5 extensions for the best results</li>
+      <li>Combining quality indicators with extensions can help find high-quality files (e.g., "1080p|bluray")</li>
+    </ul>
+  </div>
+  
+  <div class="warning">
+    <h3>⚠️ Legal Warning</h3>
+    <p>This extension is designed to find publicly accessible files that are legally available for download. Using this tool to download copyrighted material without permission may violate copyright laws in your country. Always ensure you have the right to download the files you find.</p>
+    <p>The developers of this extension are not responsible for any misuse of this tool or any consequences thereof.</p>
+  </div>
+</body>
+</html> 

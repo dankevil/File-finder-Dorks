@@ -1,0 +1,14 @@
+For the extension to function correctly, you need to create an icon.png file in this directory.
+
+You can:
+1. Create a simple square PNG file named "icon.png"
+2. Use an online icon generator to create a folder with magnifying glass icon
+3. Download a free icon from a stock website
+
+The manifest.json is configured to use the same icon file for all sizes (16px, 48px, and 128px).
+For better quality, you may want to create separate optimized versions for each size:
+- icon16.png (16x16 pixels)
+- icon48.png (48x48 pixels)
+- icon128.png (128x128 pixels)
+
+If you create these separate files, update the manifest.json to point to these specific files instead of the generic icon.png. 
